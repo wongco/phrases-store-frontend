@@ -18,7 +18,7 @@ import {
   LOAD_PHRASES,
   LOAD_PHRASES_SUCCESS,
   LOAD_PHRASES_ERROR,
-} from './constants';
+} from 'containers/App/constants';
 
 /**
  * @description Load the phrases, this action starts the request saga

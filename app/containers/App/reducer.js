@@ -27,13 +27,12 @@ const initialState = fromJS({
 
 function appReducer(state = initialState, action) {
   switch (action.type) {
-    case LOAD_PHRASES:
+    case LOAD_PHRASES: {
       return state.set('loading', true).set('error', false);
-    case LOAD_PHRASES_SUCCESS:
-      return state;
-    //     .setIn(['userData', 'repositories'], action.repos)
-    //     .set('loading', false)
-    //     .set('currentUser', action.username);
+    }
+    case LOAD_PHRASES_SUCCESS: {
+      return state.set('phrases', action.phrases).set('loading', false);
+    }
     case LOAD_PHRASES_ERROR:
       return state.set('error', action.error).set('loading', false);
     default:

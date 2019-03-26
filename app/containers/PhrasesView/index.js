@@ -11,6 +11,7 @@ import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
+import { loadPhrases } from 'containers/App/actions';
 
 import injectSaga from 'utils/injectSaga';
 import {
@@ -23,7 +24,15 @@ import messages from './messages';
 
 /* eslint-disable react/prefer-stateless-function */
 export class PhrasesView extends React.PureComponent {
+  componentDidMount() {
+    if (this.props.phrases.size === 0) {
+      this.props.loadPhrases();
+    }
+  }
+
   render() {
+    const { loading, error, phrases } = this.props;
+
     return (
       <div>
         <Helmet>
@@ -31,6 +40,13 @@ export class PhrasesView extends React.PureComponent {
           <meta name="description" content="Description of PhrasesView" />
         </Helmet>
         <FormattedMessage {...messages.header} />
+        <div>
+          <div>Future Component</div>
+          {loading && <div>Loading!</div>}
+          {error && <div>Something went wrong!</div>}
+          {phrases &&
+            phrases.map(phrase => <div key={phrase.id}>{phrase.text}</div>)}
+        </div>
       </div>
     );
   }
@@ -39,7 +55,8 @@ export class PhrasesView extends React.PureComponent {
 PhrasesView.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
-  phrases: PropTypes.array,
+  phrases: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  loadPhrases: PropTypes.func,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -48,7 +65,12 @@ const mapStateToProps = createStructuredSelector({
   phrases: makeSelectPhrases(),
 });
 
-const withConnect = connect(mapStateToProps);
+const withConnect = connect(
+  mapStateToProps,
+  {
+    loadPhrases,
+  },
+);
 
 const withSaga = injectSaga({ key: 'phrasesView', saga });
 
