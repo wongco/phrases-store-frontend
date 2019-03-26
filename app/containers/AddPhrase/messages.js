@@ -11,6 +11,6 @@ export const scope = 'app.containers.AddPhrase';
 export default defineMessages({
   header: {
     id: `${scope}.header`,
-    defaultMessage: 'This is the AddPhrase container!',
+    defaultMessage: 'Add a new phrase!',
   },
 });
