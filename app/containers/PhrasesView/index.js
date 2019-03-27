@@ -34,14 +34,17 @@ export class PhrasesView extends React.PureComponent {
     return (
       <div>
         <Helmet>
-          <title>PhrasesView</title>
+          <title>Show All Phrases</title>
           <meta name="description" content="Description of PhrasesView" />
         </Helmet>
         <FormattedMessage {...messages.header} />
         <div>
-          <div>Future Component</div>
           {loading && <div>Loading!</div>}
-          {error && <div>Something went wrong!</div>}
+          {error && (
+            <div>
+              Something went wrong! Could not retreieve updated results.
+            </div>
+          )}
           {phrases &&
             phrases.map(phrase => <div key={phrase.id}>{phrase.text}</div>)}
         </div>

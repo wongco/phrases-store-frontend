@@ -5,7 +5,6 @@ import { addPhraseCompleted, addPhraseError } from 'containers/App/actions';
 import { push } from 'connected-react-router';
 
 // Individual exports for testing
-
 export function addPhraseToAPI(text) {
   return axios({
     method: 'post',

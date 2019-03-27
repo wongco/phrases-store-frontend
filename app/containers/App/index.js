@@ -9,17 +9,34 @@
 
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+import styled from 'styled-components';
 
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import PhrasesView from 'containers/PhrasesView/Loadable';
 import AddPhrase from 'containers/AddPhrase/Loadable';
+import NavBar from './NavBar';
 
 import GlobalStyle from '../../global-styles';
 
+const AppWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  width: calc(768px + 1em * 2);
+  padding: 0 1em;
+  margin: 0 auto;
+`;
+
 export default function App() {
   return (
-    <div>
+    <AppWrapper>
+      <Helmet>
+        <title>The Phrases Store</title>
+        <meta name="description" content="a phrase storing application" />
+      </Helmet>
+      <NavBar />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/phrases" component={PhrasesView} />
@@ -27,6 +44,6 @@ export default function App() {
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
-    </div>
+    </AppWrapper>
   );
 }

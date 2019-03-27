@@ -11,6 +11,7 @@ import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import { compose } from 'redux';
 import { addPhrase } from 'containers/App/actions';
+import styled from 'styled-components';
 
 import Button from 'components/Button';
 import injectSaga from 'utils/injectSaga';
@@ -18,6 +19,17 @@ import messages from './messages';
 import Form from './Form';
 import Input from './Input';
 import saga from './saga';
+
+const H1 = styled.h1`
+  text-align: center;
+  font-size: 200%;
+`;
+
+const AddPhraseWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 /* eslint-disable react/prefer-stateless-function */
 export class AddPhrase extends React.PureComponent {
@@ -28,54 +40,51 @@ export class AddPhrase extends React.PureComponent {
     };
   }
 
+  // controlled component handler
   handleChange = evt => {
     this.setState({
       [evt.target.name]: evt.target.value,
     });
   };
 
+  // handle submission of new phrase to kick off dispatch
   handleSubmit = evt => {
     evt.preventDefault();
     const text = this.state.phraseInput;
     this.props.addPhrase(text);
-    // dispatch api loading action of application state
-    // create saga to send off request to API, and then update state to non loading
-    // then redirect to new page after
   };
 
   render() {
     return (
-      <div>
+      <AddPhraseWrapper>
         <Helmet>
-          <title>AddPhrase</title>
+          <title>Add a phrase</title>
           <meta name="description" content="Description of AddPhrase" />
         </Helmet>
-        <Form onSubmit={this.handleSubmit}>
+        <H1>
           <FormattedMessage {...messages.header} />
+        </H1>
+        <Form onSubmit={this.handleSubmit}>
           <Input
-            borderColor="red"
-            placeholder="the cow jumped over the moon."
+            borderColor="lightgray"
+            placeholder="add new phrase!"
             type="text"
             name="phraseInput"
             value={this.state.phraseInput}
             onChange={this.handleChange}
           />
-          <Button onClick={this.handleSubmit}>Add</Button>
+          <Button hoverColor="orange" hoverTextColor="white" borderColor="gray">
+            Add
+          </Button>
         </Form>
-      </div>
+      </AddPhraseWrapper>
     );
   }
 }
 
 AddPhrase.propTypes = {
-  addPhrase: PropTypes.func,
+  addPhrase: PropTypes.func.isRequired,
 };
-
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     addPhrase
-//   };
-// }
 
 const withConnect = connect(
   null,

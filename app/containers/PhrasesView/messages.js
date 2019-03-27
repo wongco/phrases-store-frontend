@@ -11,6 +11,6 @@ export const scope = 'app.containers.PhrasesView';
 export default defineMessages({
   header: {
     id: `${scope}.header`,
-    defaultMessage: 'This is the PhrasesView container!',
+    defaultMessage: 'Most recently added phrases:',
   },
 });
