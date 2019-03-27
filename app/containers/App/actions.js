@@ -18,6 +18,9 @@ import {
   LOAD_PHRASES,
   LOAD_PHRASES_SUCCESS,
   LOAD_PHRASES_ERROR,
+  ADD_PHRASE,
+  ADD_PHRASE_SUCCESS,
+  ADD_PHRASE_ERROR,
 } from 'containers/App/constants';
 
 /**
@@ -50,6 +53,39 @@ export function phrasesLoaded(phrases) {
 export function phrasesLoadingError(error) {
   return {
     type: LOAD_PHRASES_ERROR,
+    error,
+  };
+}
+
+/**
+ * Dispatched when initiating adding a phrase
+ * @param  {string} text phrase needing to be added
+ * @return {object} An action object with type of ADD_PHRASE and payload of phrase
+ */
+export function addPhrase(text) {
+  return {
+    type: ADD_PHRASE,
+    text,
+  };
+}
+
+/**
+ * Dispatched when adding a phrase successfully completes
+ * @return {object} An action object with type of ADD_PHRASE_SUCCESS
+ */
+export function addPhraseCompleted() {
+  return {
+    type: ADD_PHRASE_SUCCESS,
+  };
+}
+
+/**
+ * Dispatched when initiating adding a phrase
+ * @return {object} An action object with type ADD_PHRASE_ERROR and payload error
+ */
+export function addPhraseError(error) {
+  return {
+    type: ADD_PHRASE_ERROR,
     error,
   };
 }

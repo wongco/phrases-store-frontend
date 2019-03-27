@@ -25,9 +25,7 @@ import messages from './messages';
 /* eslint-disable react/prefer-stateless-function */
 export class PhrasesView extends React.PureComponent {
   componentDidMount() {
-    if (this.props.phrases.size === 0) {
-      this.props.loadPhrases();
-    }
+    this.props.loadPhrases();
   }
 
   render() {

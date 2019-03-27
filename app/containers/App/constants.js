@@ -12,3 +12,6 @@
 export const LOAD_PHRASES = 'phrases-stores/App/LOAD_PHRASES';
 export const LOAD_PHRASES_SUCCESS = 'phrases-stores/App/LOAD_PHRASES_SUCCESS';
 export const LOAD_PHRASES_ERROR = 'phrases-stores/App/LOAD_PHRASES_ERROR';
+export const ADD_PHRASE = 'phrases-stores/App/ADD_PHRASE';
+export const ADD_PHRASE_SUCCESS = 'phrases-stores/App/ADD_PHRASE_SUCCESS';
+export const ADD_PHRASE_ERROR = 'phrases-stores/App/ADD_PHRASE_ERROR';

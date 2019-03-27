@@ -16,6 +16,9 @@ import {
   LOAD_PHRASES,
   LOAD_PHRASES_SUCCESS,
   LOAD_PHRASES_ERROR,
+  ADD_PHRASE,
+  ADD_PHRASE_SUCCESS,
+  ADD_PHRASE_ERROR,
 } from './constants';
 
 // The initial state of the App
@@ -33,8 +36,18 @@ function appReducer(state = initialState, action) {
     case LOAD_PHRASES_SUCCESS: {
       return state.set('phrases', action.phrases).set('loading', false);
     }
-    case LOAD_PHRASES_ERROR:
+    case LOAD_PHRASES_ERROR: {
       return state.set('error', action.error).set('loading', false);
+    }
+    case ADD_PHRASE: {
+      return state.set('loading', true).set('error', false);
+    }
+    case ADD_PHRASE_SUCCESS: {
+      return state.set('loading', false);
+    }
+    case ADD_PHRASE_ERROR: {
+      return state.set('error', action.error).set('loading', false);
+    }
     default:
       return state;
   }

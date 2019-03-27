@@ -10,13 +10,14 @@ import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import { compose } from 'redux';
+import { addPhrase } from 'containers/App/actions';
 
 import Button from 'components/Button';
 import injectSaga from 'utils/injectSaga';
-import saga from './saga';
 import messages from './messages';
 import Form from './Form';
 import Input from './Input';
+import saga from './saga';
 
 /* eslint-disable react/prefer-stateless-function */
 export class AddPhrase extends React.PureComponent {
@@ -33,13 +34,12 @@ export class AddPhrase extends React.PureComponent {
     });
   };
 
-  handleSubmit = async evt => {
+  handleSubmit = evt => {
     evt.preventDefault();
-    // const text = this.state.phraseInput;
+    const text = this.state.phraseInput;
+    this.props.addPhrase(text);
     // dispatch api loading action of application state
-
     // create saga to send off request to API, and then update state to non loading
-
     // then redirect to new page after
   };
 
@@ -50,7 +50,7 @@ export class AddPhrase extends React.PureComponent {
           <title>AddPhrase</title>
           <meta name="description" content="Description of AddPhrase" />
         </Helmet>
-        <Form onSubmit={null}>
+        <Form onSubmit={this.handleSubmit}>
           <FormattedMessage {...messages.header} />
           <Input
             borderColor="red"
@@ -60,7 +60,7 @@ export class AddPhrase extends React.PureComponent {
             value={this.state.phraseInput}
             onChange={this.handleChange}
           />
-          <Button onClick={null}>Add</Button>
+          <Button onClick={this.handleSubmit}>Add</Button>
         </Form>
       </div>
     );
@@ -68,18 +68,20 @@ export class AddPhrase extends React.PureComponent {
 }
 
 AddPhrase.propTypes = {
-  dispatch: PropTypes.func.isRequired,
+  addPhrase: PropTypes.func,
 };
 
-function mapDispatchToProps(dispatch) {
-  return {
-    dispatch,
-  };
-}
+// function mapDispatchToProps(dispatch) {
+//   return {
+//     addPhrase
+//   };
+// }
 
 const withConnect = connect(
   null,
-  mapDispatchToProps,
+  {
+    addPhrase,
+  },
 );
 
 const withSaga = injectSaga({ key: 'addPhrase', saga });

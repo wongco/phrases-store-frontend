@@ -16,6 +16,7 @@ export default function* phrasesViewSaga() {
 }
 
 // worker saga: gets invoked when watcher sees action and dispatches result
+// export function* getPhrases(action) { // this is action from the origina action object dispatched by LOAD_PHRASES
 export function* getPhrases() {
   try {
     const apiResponse = yield call(fetchPhrases);
