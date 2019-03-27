@@ -11,19 +11,27 @@
 
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import styled from 'styled-components';
+import H1 from 'components/H1';
 import messages from './messages';
+
+const P = styled.p`
+  font-family: Helvetica;
+  font-weight: 200;
+  text-align: center;
+`;
 
 /* eslint-disable react/prefer-stateless-function */
 export default class HomePage extends React.PureComponent {
   render() {
     return (
       <div>
-        <h1>
+        <H1>
           <FormattedMessage {...messages.header} />
-        </h1>
-        <p>
+        </H1>
+        <P>
           <FormattedMessage {...messages.intro} />
-        </p>
+        </P>
       </div>
     );
   }

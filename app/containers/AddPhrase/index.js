@@ -11,25 +11,15 @@ import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import { compose } from 'redux';
 import { addPhrase } from 'containers/App/actions';
-import styled from 'styled-components';
 
 import Button from 'components/Button';
+import H1 from 'components/H1';
 import injectSaga from 'utils/injectSaga';
+import Wrapper from './Wrapper';
 import messages from './messages';
 import Form from './Form';
 import Input from './Input';
 import saga from './saga';
-
-const H1 = styled.h1`
-  text-align: center;
-  font-size: 200%;
-`;
-
-const AddPhraseWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
 
 /* eslint-disable react/prefer-stateless-function */
 export class AddPhrase extends React.PureComponent {
@@ -56,7 +46,7 @@ export class AddPhrase extends React.PureComponent {
 
   render() {
     return (
-      <AddPhraseWrapper>
+      <Wrapper>
         <Helmet>
           <title>Add a phrase</title>
           <meta name="description" content="Description of AddPhrase" />
@@ -66,7 +56,6 @@ export class AddPhrase extends React.PureComponent {
         </H1>
         <Form onSubmit={this.handleSubmit}>
           <Input
-            borderColor="lightgray"
             placeholder="add new phrase!"
             type="text"
             name="phraseInput"
@@ -77,7 +66,7 @@ export class AddPhrase extends React.PureComponent {
             Add
           </Button>
         </Form>
-      </AddPhraseWrapper>
+      </Wrapper>
     );
   }
 }

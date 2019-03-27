@@ -12,6 +12,7 @@ import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 import { loadPhrases } from 'containers/App/actions';
+import H1 from 'components/H1';
 
 import injectSaga from 'utils/injectSaga';
 import {
@@ -37,16 +38,18 @@ export class PhrasesView extends React.PureComponent {
           <title>Show All Phrases</title>
           <meta name="description" content="Description of PhrasesView" />
         </Helmet>
-        <FormattedMessage {...messages.header} />
+        {error && (
+          <div>Something went wrong! Could not retreieve updated results.</div>
+        )}
+        <H1>
+          <FormattedMessage {...messages.header} />
+        </H1>
         <div>
-          {loading && <div>Loading!</div>}
-          {error && (
-            <div>
-              Something went wrong! Could not retreieve updated results.
-            </div>
+          {loading ? (
+            <div>Loading!</div>
+          ) : (
+            phrases.map(phrase => <div key={phrase.id}>{phrase.text}</div>)
           )}
-          {phrases &&
-            phrases.map(phrase => <div key={phrase.id}>{phrase.text}</div>)}
         </div>
       </div>
     );
