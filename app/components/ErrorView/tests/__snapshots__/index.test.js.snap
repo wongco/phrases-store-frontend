@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ErrorView /> matches snapshot for default criteria 1`] = `<Wrapper />`;
+
+exports[`<ErrorView.Image /> matches snapshot for default criteria 1`] = `<EmojiWrapper />`;
+
+exports[`<ErrorView.Message /> matches snapshot for default criteria 1`] = `<ErrorMessageWrapper />`;

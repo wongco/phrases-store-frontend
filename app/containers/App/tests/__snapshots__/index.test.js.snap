@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> matches snapshot for default criteria 1`] = `
+<App__AppWrapper>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+  >
+    <title>
+      The Phrases Store
+    </title>
+    <meta
+      content="a phrase storing application"
+      name="description"
+    />
+  </HelmetWrapper>
+  <NavBar />
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/phrases"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/add"
+    />
+    <Route
+      component={[Function]}
+    />
+  </Switch>
+  <GlobalStyleComponent
+    suppressMultiMountWarning={false}
+  />
+</App__AppWrapper>
+`;

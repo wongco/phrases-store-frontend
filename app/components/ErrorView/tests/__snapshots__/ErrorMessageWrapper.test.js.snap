@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ErrorMessageWrapper /> matches snapshot for default criteria 1`] = `
+<StyledComponent
+  forwardedClass={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": undefined,
+      "componentStyle": ComponentStyle {
+        "componentId": "ErrorMessageWrapper-sc-1sgsbbn-0",
+        "isStatic": true,
+        "rules": Array [
+          "margin:0.5em;",
+        ],
+      },
+      "displayName": "ErrorMessageWrapper",
+      "render": [Function],
+      "styledComponentId": "ErrorMessageWrapper-sc-1sgsbbn-0",
+      "target": "div",
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+/>
+`;

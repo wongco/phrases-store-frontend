@@ -69,7 +69,7 @@ export class AddPhrase extends React.PureComponent {
         <Form onSubmit={this.handleSubmit}>
           <Input
             disabled={loading}
-            placeholder="the cow jumped over the moon!"
+            placeholder="sample phrase: the cow jumped over the moon!"
             type="text"
             name="phraseInput"
             value={phraseInput}

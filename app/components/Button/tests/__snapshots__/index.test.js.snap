@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> matches snapshot for default criteria 1`] = `
+<StyledComponent
+  forwardedClass={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": undefined,
+      "componentStyle": ComponentStyle {
+        "componentId": "Button-sc-1fkoyq4-0",
+        "isStatic": false,
+        "rules": Array [
+          "width:5em;border:1px solid ",
+          [Function],
+          ";color:",
+          [Function],
+          ";background-color:",
+          [Function],
+          ";&:hover{background-color:",
+          [Function],
+          ";color:",
+          [Function],
+          ";}",
+        ],
+      },
+      "displayName": "Button",
+      "propTypes": Object {
+        "borderColor": [Function],
+        "color": [Function],
+        "disabled": [Function],
+        "hoverBgColor": [Function],
+        "hoverColor": [Function],
+      },
+      "render": [Function],
+      "styledComponentId": "Button-sc-1fkoyq4-0",
+      "target": "button",
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+/>
+`;

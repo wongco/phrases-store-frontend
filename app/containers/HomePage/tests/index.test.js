@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 
 import HomePage from '../index';
 import messages from '../messages';
@@ -11,5 +12,11 @@ describe('<HomePage />', () => {
     expect(
       renderedComponent.contains(<FormattedMessage {...messages.header} />),
     ).toEqual(true);
+  });
+
+  it('matches snapshot for default criteria', () => {
+    const wrapper = shallow(<HomePage />);
+    const serialized = toJson(wrapper);
+    expect(serialized).toMatchSnapshot();
   });
 });

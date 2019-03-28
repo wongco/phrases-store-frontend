@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HomePage /> matches snapshot for default criteria 1`] = `
+<div>
+  <H1>
+    <FormattedMessage
+      defaultMessage="Welcome to The Phrases Store!"
+      id="app.containers.HomePage.header"
+      values={Object {}}
+    />
+  </H1>
+  <HomePage__P>
+    <FormattedMessage
+      defaultMessage="Click Add on the navigation to add a phrase."
+      id="app.containers.HomePage.intro"
+      values={Object {}}
+    />
+  </HomePage__P>
+</div>
+`;

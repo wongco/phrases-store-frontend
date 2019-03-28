@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EmojiWrapper /> matches snapshot for default criteria 1`] = `
+<StyledComponent
+  forwardedClass={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": undefined,
+      "componentStyle": ComponentStyle {
+        "componentId": "EmojiWrapper-sc-57wo0l-0",
+        "isStatic": true,
+        "rules": Array [
+          "font-size:150%;margin:0 0.5em;",
+        ],
+      },
+      "displayName": "EmojiWrapper",
+      "render": [Function],
+      "styledComponentId": "EmojiWrapper-sc-57wo0l-0",
+      "target": "div",
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+/>
+`;

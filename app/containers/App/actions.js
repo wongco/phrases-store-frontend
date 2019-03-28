@@ -46,7 +46,7 @@ export function phrasesLoaded(phrases) {
 }
 
 /**
- * Dispatched when loading the phrases fails
+ * @description Dispatched when loading the phrases fails
  * @param  {object} error The error
  * @return {object} An action object with a type of LOAD_PHRASES_ERROR passing the error
  */
@@ -58,7 +58,7 @@ export function phrasesLoadingError(error) {
 }
 
 /**
- * Dispatched when initiating adding a phrase
+ * @description Dispatched when initiating adding a phrase
  * @param  {string} text phrase needing to be added
  * @return {object} An action object with type of ADD_PHRASE and payload of phrase
  */
@@ -70,7 +70,7 @@ export function addPhrase(text) {
 }
 
 /**
- * Dispatched when adding a phrase successfully completes
+ * @description Dispatched when adding a phrase successfully completes by the request saga
  * @return {object} An action object with type of ADD_PHRASE_SUCCESS
  */
 export function addPhraseCompleted() {
@@ -80,7 +80,7 @@ export function addPhraseCompleted() {
 }
 
 /**
- * Dispatched when initiating adding a phrase
+ * @description Dispatched when initiating adding a phrase
  * @return {object} An action object with type ADD_PHRASE_ERROR and payload error
  */
 export function addPhraseError(error) {
@@ -91,7 +91,7 @@ export function addPhraseError(error) {
 }
 
 /**
- * Dispatched when trying to clear error state
+ * @description Dispatched when trying to clear error state
  * @return {object} An action object with type CLEAR_ERROR
  */
 export function clearAppError() {

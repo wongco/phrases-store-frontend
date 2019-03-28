@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<H1 /> matches snapshot for default criteria 1`] = `
+<StyledComponent
+  forwardedClass={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": undefined,
+      "componentStyle": ComponentStyle {
+        "componentId": "H1-tncdg6-0",
+        "isStatic": true,
+        "rules": Array [
+          "text-align:center;font-size:200%;font-weight:200;",
+        ],
+      },
+      "displayName": "H1",
+      "render": [Function],
+      "styledComponentId": "H1-tncdg6-0",
+      "target": "h1",
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+/>
+`;
