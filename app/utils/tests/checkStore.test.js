@@ -1,7 +1,6 @@
 /**
  * Test injectors
  */
-
 import checkStore from '../checkStore';
 
 describe('checkStore', () => {

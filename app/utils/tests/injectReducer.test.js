@@ -1,7 +1,6 @@
 /**
  * Test injectors
  */
-
 import { memoryHistory } from 'react-router-dom';
 import { shallow } from 'enzyme';
 import React from 'react';

@@ -1,6 +1,6 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
 import { enzymeFind } from 'styled-components/test-utils';
+import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 import ErrorMessageWrapper from '../ErrorMessageWrapper';
