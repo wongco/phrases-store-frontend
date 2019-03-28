@@ -11,7 +11,7 @@ import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
-import { addPhrase } from 'containers/App/actions';
+import { addPhrase, clearAppError } from 'containers/App/actions';
 
 import Button from 'components/Button';
 import H1 from 'components/H1';
@@ -20,7 +20,7 @@ import { makeSelectLoading, makeSelectError } from 'containers/App/selectors';
 import LoadingIndicator from 'components/LoadingIndicator';
 import ErrorView from 'components/ErrorView';
 
-import Wrapper from './Wrapper';
+import AddPhraseWrapper from './AddPhraseWrapper';
 import messages from './messages';
 import Form from './Form';
 import Input from './Input';
@@ -35,7 +35,11 @@ export class AddPhrase extends React.PureComponent {
     };
   }
 
-  // controlled component handler
+  componentWillUnmount() {
+    this.props.clearAppError();
+  }
+
+  // controlled component state handler
   handleChange = evt => {
     this.setState({
       [evt.target.name]: evt.target.value,
@@ -54,7 +58,7 @@ export class AddPhrase extends React.PureComponent {
     const { phraseInput } = this.state;
 
     return (
-      <Wrapper>
+      <AddPhraseWrapper>
         <Helmet>
           <title>Add a phrase</title>
           <meta name="description" content="Description of AddPhrase" />
@@ -65,7 +69,7 @@ export class AddPhrase extends React.PureComponent {
         <Form onSubmit={this.handleSubmit}>
           <Input
             disabled={loading}
-            placeholder="add new phrase!"
+            placeholder="the cow jumped over the moon!"
             type="text"
             name="phraseInput"
             value={phraseInput}
@@ -76,8 +80,8 @@ export class AddPhrase extends React.PureComponent {
             disabled={loading || phraseInput.length === 0}
             color="black"
             bgColor="#ffe6b3"
+            hoverColor="white"
             hoverBgColor="orange"
-            hoverTextColor="white"
             borderColor="gray"
           >
             Add
@@ -92,13 +96,16 @@ export class AddPhrase extends React.PureComponent {
             </ErrorView.Message>
           </ErrorView>
         )}
-      </Wrapper>
+      </AddPhraseWrapper>
     );
   }
 }
 
 AddPhrase.propTypes = {
+  loading: PropTypes.bool,
+  error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   addPhrase: PropTypes.func.isRequired,
+  clearAppError: PropTypes.func,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -110,6 +117,7 @@ const withConnect = connect(
   mapStateToProps,
   {
     addPhrase,
+    clearAppError,
   },
 );
 

@@ -6,7 +6,7 @@ import EmojiWrapper from './EmojiWrapper';
 class ErrorView extends PureComponent {
   static Image = props => <EmojiWrapper>{props.emoji}</EmojiWrapper>;
 
-  static Message = props => <div>{props.children}</div>;
+  static Message = props => props.children;
 
   render() {
     return <Wrapper>{this.props.children}</Wrapper>;

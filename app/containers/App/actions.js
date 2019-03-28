@@ -17,10 +17,10 @@
 import {
   LOAD_PHRASES,
   LOAD_PHRASES_SUCCESS,
-  LOAD_PHRASES_ERROR,
   ADD_PHRASE,
   ADD_PHRASE_SUCCESS,
-  ADD_PHRASE_ERROR,
+  SET_APP_ERROR,
+  CLEAR_ERROR,
 } from 'containers/App/constants';
 
 /**
@@ -52,7 +52,7 @@ export function phrasesLoaded(phrases) {
  */
 export function phrasesLoadingError(error) {
   return {
-    type: LOAD_PHRASES_ERROR,
+    type: SET_APP_ERROR,
     error,
   };
 }
@@ -85,7 +85,17 @@ export function addPhraseCompleted() {
  */
 export function addPhraseError(error) {
   return {
-    type: ADD_PHRASE_ERROR,
+    type: SET_APP_ERROR,
     error,
+  };
+}
+
+/**
+ * Dispatched when trying to clear error state
+ * @return {object} An action object with type CLEAR_ERROR
+ */
+export function clearAppError() {
+  return {
+    type: CLEAR_ERROR,
   };
 }

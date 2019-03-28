@@ -1,3 +1,9 @@
+/**
+ * Attribution: Loading Circle Indicator
+ * From: React Boiler Plate Example Template Demo
+ * Link: https://github.com/react-boilerplate/react-boilerplate
+ */
+
 import React from 'react';
 
 import Circle from './Circle';

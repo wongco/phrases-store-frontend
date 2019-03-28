@@ -11,9 +11,10 @@ import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
-import { loadPhrases } from 'containers/App/actions';
+import { loadPhrases, clearAppError } from 'containers/App/actions';
 import H1 from 'components/H1';
 import ErrorView from 'components/ErrorView';
+import LoadingIndicator from 'components/LoadingIndicator';
 
 import injectSaga from 'utils/injectSaga';
 import {
@@ -21,6 +22,8 @@ import {
   makeSelectError,
   makeSelectPhrases,
 } from 'containers/App/selectors';
+import PhraseViewWrapper from './PhraseViewWrapper';
+import PhrasesWrapper from './PhrasesWrapper';
 import Phrase from './Phrase';
 import saga from './saga';
 import messages from './messages';
@@ -31,11 +34,15 @@ export class PhrasesView extends React.PureComponent {
     this.props.loadPhrases();
   }
 
+  componentWillUnmount() {
+    this.props.clearAppError();
+  }
+
   render() {
     const { loading, error, phrases } = this.props;
 
     return (
-      <div>
+      <PhraseViewWrapper>
         <Helmet>
           <title>Show All Phrases</title>
           <meta name="description" content="Description of PhrasesView" />
@@ -43,17 +50,17 @@ export class PhrasesView extends React.PureComponent {
         <H1>
           <FormattedMessage {...messages.header} />
         </H1>
-        <div>
-          {error && (
-            <ErrorView>
-              <ErrorView.Image emoji="⚠️" />
-              <ErrorView.Message>
-                Error obtaining latest phrases!
-              </ErrorView.Message>
-            </ErrorView>
-          )}
+        {error && (
+          <ErrorView>
+            <ErrorView.Image emoji="🛑" />
+            <ErrorView.Message>
+              <FormattedMessage {...messages.error} />
+            </ErrorView.Message>
+          </ErrorView>
+        )}
+        <PhrasesWrapper>
           {loading ? (
-            <div>Loading!</div>
+            <LoadingIndicator />
           ) : (
             <ul>
               {phrases.map(phrase => (
@@ -61,8 +68,8 @@ export class PhrasesView extends React.PureComponent {
               ))}
             </ul>
           )}
-        </div>
-      </div>
+        </PhrasesWrapper>
+      </PhraseViewWrapper>
     );
   }
 }
@@ -72,6 +79,7 @@ PhrasesView.propTypes = {
   error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   phrases: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   loadPhrases: PropTypes.func,
+  clearAppError: PropTypes.func,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -84,6 +92,7 @@ const withConnect = connect(
   mapStateToProps,
   {
     loadPhrases,
+    clearAppError,
   },
 );
 

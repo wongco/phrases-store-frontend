@@ -2,7 +2,7 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 import { ADD_PHRASE } from 'containers/App/constants';
 import { addPhraseCompleted, addPhraseError } from 'containers/App/actions';
 import { push } from 'connected-react-router';
-import { addPhraseToAPI } from 'utils/apiHelper';
+import { addPhraseToAPI } from 'containers/App/apiHelper';
 
 // watcher saga: listens for action dispatched to the store, starts worker saga
 export default function* addPhraseSaga() {
