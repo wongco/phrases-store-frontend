@@ -13,6 +13,7 @@ import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 import { loadPhrases } from 'containers/App/actions';
 import H1 from 'components/H1';
+import ErrorView from 'components/ErrorView';
 
 import injectSaga from 'utils/injectSaga';
 import {
@@ -20,6 +21,7 @@ import {
   makeSelectError,
   makeSelectPhrases,
 } from 'containers/App/selectors';
+import Phrase from './Phrase';
 import saga from './saga';
 import messages from './messages';
 
@@ -38,17 +40,26 @@ export class PhrasesView extends React.PureComponent {
           <title>Show All Phrases</title>
           <meta name="description" content="Description of PhrasesView" />
         </Helmet>
-        {error && (
-          <div>Something went wrong! Could not retreieve updated results.</div>
-        )}
         <H1>
           <FormattedMessage {...messages.header} />
         </H1>
         <div>
+          {error && (
+            <ErrorView>
+              <ErrorView.Image emoji="⚠️" />
+              <ErrorView.Message>
+                Error obtaining latest phrases!
+              </ErrorView.Message>
+            </ErrorView>
+          )}
           {loading ? (
             <div>Loading!</div>
           ) : (
-            phrases.map(phrase => <div key={phrase.id}>{phrase.text}</div>)
+            <ul>
+              {phrases.map(phrase => (
+                <Phrase key={phrase.id} text={phrase.text} />
+              ))}
+            </ul>
           )}
         </div>
       </div>
