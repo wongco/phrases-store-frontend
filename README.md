@@ -16,6 +16,16 @@ This application fulfills the following stories:
 
 - The application should utilize a Node / Express server.
 
+### Leverages the following technology:
+
+- React Router
+
+- Redux
+
+- Redux Saga
+
+- Reselect
+
 - Styled Components - Use at least one styled component. The component must have a prop passed into the Styled Component for conditional rendering.
 
 - Unit Tests - Write tests for one container. Full test coverage is not required.
