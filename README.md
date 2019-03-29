@@ -1,6 +1,6 @@
-# # React Boiler Plate Frontend for Phrases-store Application
+# Frontend for Phrases-store Application
 
-This is the frontend for the Phrases-store application. It provides the ability to add and display phrases. The Phrases-store Node/Express backend is required for this application to function normally.
+This is the frontend for the Phrases-store application. It provides the ability to add and display phrases. The Phrases-store Node/Express backend is required for this application to function normally. This app was bootstrapped with [React Boiler Plate](https://github.com/react-boilerplate/react-boilerplate).
 
 ## Stories
 
@@ -20,6 +20,12 @@ This application fulfills the following stories:
 
 - Unit Tests - Write tests for one container. Full test coverage is not required.
 
+## Prerequisites
+
+You will need to install the following before proceeding.
+
+- Node v10.14.1 + npm
+
 ## Setup
 
 To install application
@@ -34,7 +40,7 @@ To install application
 
    `git clone git@github.com:wongco/phrases-store-frontend.git`
 
-4. change into the repo direction and install packages using
+4. change into the repo directory and install packages using
 
    `cd phrases-store-frontend`
 
