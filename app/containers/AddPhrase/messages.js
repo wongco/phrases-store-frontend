@@ -13,4 +13,8 @@ export default defineMessages({
     id: `${scope}.header`,
     defaultMessage: 'Add a phrase time!',
   },
+  error: {
+    id: `${scope}.error`,
+    defaultMessage: 'Error adding phrase! Try again later.',
+  },
 });

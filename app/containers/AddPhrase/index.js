@@ -92,7 +92,7 @@ export class AddPhrase extends React.PureComponent {
           <ErrorView>
             <ErrorView.Image emoji="⚠️" />
             <ErrorView.Message>
-              Error adding phrase! Try again later.
+              <FormattedMessage {...messages.error} />
             </ErrorView.Message>
           </ErrorView>
         )}
