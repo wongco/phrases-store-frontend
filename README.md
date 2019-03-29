@@ -38,7 +38,7 @@ To install application
 
 3. git clone this repo to your local environment
 
-   `git clone git@github.com:wongco/phrases-store-frontend.git`
+   `git clone https://github.com/wongco/phrases-store-frontend.git`
 
 4. change into the repo directory and install packages using
 
