@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`addPhrase Worker Saga should call the addPhraseError action if api response errors 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "CALL": Object {
+    "args": Array [
+      "testUserInput",
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+}
+`;
+
+exports[`addPhrase Worker Saga should dispatch the addPhrasesCompleted then push to /phrases if api response succeeds 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "CALL": Object {
+    "args": Array [
+      "testUserInput",
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+}
+`;

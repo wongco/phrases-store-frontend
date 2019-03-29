@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Form /> matches snapshot for default criteria 1`] = `
+<StyledComponent
+  forwardedClass={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": undefined,
+      "componentStyle": ComponentStyle {
+        "componentId": "Form-dg7sp0-0",
+        "isStatic": true,
+        "rules": Array [
+          "display:flex;flex-direction:row;justify-content:center;width:80%;margin-bottom:1em;",
+        ],
+      },
+      "displayName": "Form",
+      "render": [Function],
+      "styledComponentId": "Form-dg7sp0-0",
+      "target": "form",
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+/>
+`;

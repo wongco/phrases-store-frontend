@@ -104,7 +104,7 @@ export class AddPhrase extends React.PureComponent {
 AddPhrase.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
-  addPhrase: PropTypes.func.isRequired,
+  addPhrase: PropTypes.func,
   clearAppError: PropTypes.func,
 };
 

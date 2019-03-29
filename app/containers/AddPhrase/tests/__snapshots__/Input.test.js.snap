@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Input /> matches snapshot for default criteria 1`] = `
+<StyledComponent
+  forwardedClass={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": undefined,
+      "componentStyle": ComponentStyle {
+        "componentId": "Input-sc-1o0je8j-0",
+        "isStatic": false,
+        "rules": Array [
+          "height:2em;padding:0 1em;width:100%;border:1px solid ",
+          [Function],
+          ";",
+          [Function],
+          ";",
+        ],
+      },
+      "displayName": "Input",
+      "render": [Function],
+      "styledComponentId": "Input-sc-1o0je8j-0",
+      "target": "input",
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+/>
+`;

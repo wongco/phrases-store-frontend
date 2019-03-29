@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AddPhrase> matches snapshot for default criteria 1`] = `
+<AddPhraseWrapper>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+  >
+    <title>
+      Add a phrase
+    </title>
+    <meta
+      content="Description of AddPhrase"
+      name="description"
+    />
+  </HelmetWrapper>
+  <H1>
+    <FormattedMessage
+      defaultMessage="Add a phrase time!"
+      id="app.containers.AddPhrase.header"
+      values={Object {}}
+    />
+  </H1>
+  <Form
+    onSubmit={[Function]}
+  >
+    <Input
+      borderColor="orange"
+      name="phraseInput"
+      onChange={[Function]}
+      placeholder="sample phrase: the cow jumped over the moon!"
+      type="text"
+      value=""
+    />
+    <Button
+      bgColor="#ffe6b3"
+      borderColor="gray"
+      color="black"
+      disabled={true}
+      hoverBgColor="orange"
+      hoverColor="white"
+    >
+      Add
+    </Button>
+  </Form>
+</AddPhraseWrapper>
+`;

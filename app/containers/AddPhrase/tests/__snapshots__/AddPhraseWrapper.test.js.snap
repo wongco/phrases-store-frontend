@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AddPhraseWrapper /> matches snapshot for default criteria 1`] = `
+<StyledComponent
+  forwardedClass={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": undefined,
+      "componentStyle": ComponentStyle {
+        "componentId": "AddPhraseWrapper-xlgpvl-0",
+        "isStatic": true,
+        "rules": Array [
+          "display:flex;flex-direction:column;align-items:center;",
+        ],
+      },
+      "displayName": "AddPhraseWrapper",
+      "render": [Function],
+      "styledComponentId": "AddPhraseWrapper-xlgpvl-0",
+      "target": "div",
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+/>
+`;
