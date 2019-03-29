@@ -1,6 +1,10 @@
 import axios from 'axios';
 import { API_BASE_URL, API_TIMEOUT_IN_MS } from './config';
 
+/**
+ * @description shape base apiCall request data for any api request
+ * @return { object} request object
+ */
 function baseApiRequestData() {
   return {
     url: `${API_BASE_URL}/phrases`,

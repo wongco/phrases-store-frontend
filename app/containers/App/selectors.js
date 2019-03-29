@@ -23,6 +23,7 @@ const makeSelectLocation = () =>
   );
 
 export {
+  selectGlobal,
   makeSelectLoading,
   makeSelectError,
   makeSelectPhrases,
