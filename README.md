@@ -1,156 +1,80 @@
-<img src="https://raw.githubusercontent.com/react-boilerplate/react-boilerplate-brand/master/assets/banner-metal-optimized.jpg" alt="react boilerplate banner" align="center" />
+# # React Boiler Plate Frontend for Phrases-store Application
 
-<br />
+This is the frontend for the Phrases-store application. It provides the ability to add and display phrases. The Phrases-store Node/Express backend is required for this application to function normally.
 
-<div align="center"><strong>Start your next react project in seconds</strong></div>
-<div align="center">A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices</div>
+## Stories
 
-<br />
+This application fulfills the following stories:
 
-<div align="center">
-  <!-- Dependency Status -->
-  <a href="https://david-dm.org/react-boilerplate/react-boilerplate">
-    <img src="https://david-dm.org/react-boilerplate/react-boilerplate.svg" alt="Dependency Status" />
-  </a>
-  <!-- devDependency Status -->
-  <a href="https://david-dm.org/react-boilerplate/react-boilerplate#info=devDependencies">
-    <img src="https://david-dm.org/react-boilerplate/react-boilerplate/dev-status.svg" alt="devDependency Status" />
-  </a>
-  <!-- Build Status -->
-  <a href="https://travis-ci.org/react-boilerplate/react-boilerplate">
-    <img src="https://travis-ci.org/react-boilerplate/react-boilerplate.svg" alt="Build Status" />
-  </a>
-  <!-- Test Coverage -->
-  <a href="https://coveralls.io/r/react-boilerplate/react-boilerplate">
-    <img src="https://coveralls.io/repos/github/react-boilerplate/react-boilerplate/badge.svg" alt="Test Coverage" />
-  </a>
-  <a href="https://spectrum.chat/react-boilerplate">
-  <img alt="Chat with us on Spectrum" src="https://withspectrum.github.io/badge/badge.svg" />
-</a>
+- One page shall have UI to input a string which saves to a database of your choice.
 
-</div>
-<div align="center">
-    <!-- Backers -->
-  <a href="#backers">
-    <img src="https://opencollective.com/react-boilerplate/backers/badge.svg" alt="Backers" />
-  </a>
-      <!-- Sponsors -->
-  <a href="#sponsors">
-    <img src="https://opencollective.com/react-boilerplate/sponsors/badge.svg" alt="Sponsors" />
-  </a>
-  <a href="http://thinkmill.com.au/?utm_source=github&utm_medium=badge&utm_campaign=react-boilerplate">
-    <img alt="Supported by Thinkmill" src="https://thinkmill.github.io/badge/heart.svg" />
-  </a>
-</div>
+- One page shall display all strings stored on the database.
 
-<br />
+- User shall be able to navigate between the two pages.
 
-<div align="center">
-  <sub>Created by <a href="https://twitter.com/mxstbr">Max Stoiber</a> and maintained with ❤️ by an amazing <a href="https://github.com/orgs/react-boilerplate/teams/core">team of developers</a>.</sub>
-</div>
+- The application need not be fully styled, but should be laid out in a meaningful way.
 
-## Features
+- The application should utilize a Node / Express server.
 
-<dl>
-  <dt>Quick scaffolding</dt>
-  <dd>Create components, containers, routes, selectors and sagas - and their tests - right from the CLI!</dd>
+- Styled Components - Use at least one styled component. The component must have a prop passed into the Styled Component for conditional rendering.
 
-  <dt>Instant feedback</dt>
-  <dd>Enjoy the best DX (Developer eXperience) and code your app at the speed of thought! Your saved changes to the CSS and JS are reflected instantaneously without refreshing the page. Preserve application state even when you update something in the underlying code!</dd>
+- Unit Tests - Write tests for one container. Full test coverage is not required.
 
-  <dt>Predictable state management</dt>
-  <dd>Unidirectional data flow allows for change logging and time travel debugging.</dd>
+## Setup
 
-  <dt>Next generation JavaScript</dt>
-  <dd>Use template strings, object destructuring, arrow functions, JSX syntax and more.</dd>
+To install application
 
-  <dt>Next generation CSS</dt>
-  <dd>Write composable CSS that's co-located with your components for complete modularity. Unique generated class names keep the specificity low while eliminating style clashes. Ship only the styles that are on the page for the best performance.</dd>
+1. Install the Node/Express backend server first. Follow the instructions on the repo readme file.
 
-  <dt>Industry-standard routing</dt>
-  <dd>It's natural to want to add pages (e.g. `/about`) to your application, and routing makes this possible.</dd>
+   [[Backend Link]](https://github.com/wongco/phrases-store-backend)
 
-  <dt>Industry-standard i18n internationalization support</dt>
-  <dd>Scalable apps need to support multiple languages, easily add and support multiple languages with `react-intl`.</dd>
+2. Start the locally installed backend server.
 
-  <dt>Offline-first</dt>
-  <dd>The next frontier in performant web apps: availability without a network connection from the instant your users load the app.</dd>
+3. git clone this repo to your local environment
 
-  <dt>Static code analysis</dt>
-  <dd>Focus on writing new features without worrying about formatting or code quality. With the right editor setup, your code will automatically be formatted and linted as you work.</dd>
+   `git clone git@github.com:wongco/phrases-store-frontend.git`
 
-  <dt>SEO</dt>
-  <dd>We support SEO (document head tags management) for search engines that support indexing of JavaScript content. (eg. Google)</dd>
-</dl>
+4. change into the repo direction and install packages using
 
-But wait... there's more!
+   `cd phrases-store-frontend`
 
-- _The best test setup:_ Automatically guarantee code quality and non-breaking
-  changes. (Seen a react app with 100% test coverage before?)
-- _Native web app:_ Your app's new home? The home screen of your users' phones.
-- _The fastest fonts:_ Say goodbye to vacant text.
-- _Stay fast_: Profile your app's performance from the comfort of your command
-  line!
-- _Catch problems:_ AppVeyor and TravisCI setups included by default, so your
-  tests get run automatically on Windows and Unix.
+   `npm install`
 
-There’s also a <a href="https://vimeo.com/168648012">fantastic video</a> on how to structure your React.js apps with scalability in mind. It provides rationale for the majority of boilerplate's design decisions.
+5. startup server
 
-<sub><i>Keywords: React.js, Redux, Hot Reloading, ESNext, Babel, react-router, Offline First, ServiceWorker, `styled-components`, redux-saga, FontFaceObserver</i></sub>
+   `npm start`
 
-## Quick start
+6. Default frontend URL is located at:
 
-1.  Make sure that you have Node.js v8.10 and npm v5 or above installed.
-2.  Clone this repo using `git clone --depth=1 https://github.com/react-boilerplate/react-boilerplate.git <YOUR_PROJECT_NAME>`
-3.  Move to the appropriate directory: `cd <YOUR_PROJECT_NAME>`.<br />
-4.  Run `npm run setup` in order to install dependencies and clean the git repo.<br />
-    _At this point you can run `npm start` to see the example app at `http://localhost:3000`._
-5.  Run `npm run clean` to delete the example app.
+   [http://localhost:3000/](http://localhost:3000/)
 
-Now you're ready to rumble!
+## Running Tests + Coverage Report
 
-> Please note that this boilerplate is **production-ready and not meant for beginners**! If you're just starting out with react or redux, please refer to https://github.com/petehunt/react-howto instead. If you want a solid, battle-tested base to build your next product upon and have some experience with react, this is the perfect start for you.
+In the root folder, run:
 
-## Documentation
+    `npm test`
 
-- [**The Hitchhikers Guide to `react-boilerplate`**](docs/general/introduction.md): An introduction for newcomers to this boilerplate.
-- [Overview](docs/general): A short overview of the included tools
-- [**Commands**](docs/general/commands.md): Getting the most out of this boilerplate
-- [Testing](docs/testing): How to work with the built-in test harness
-- [Styling](docs/css): How to work with the CSS tooling
-- [Your app](docs/js): Supercharging your app with Routing, Redux, simple
-  asynchronicity helpers, etc.
-- [**Troubleshooting**](docs/general/gotchas.md): Solutions to common problems faced by developers.
+## Built / Leverages
 
-## Supporters
+- Bootstrapped with [React Boiler Plate](https://github.com/react-boilerplate/react-boilerplate)
+- React
+- React Router
+- Redux
+- Redux Saga
+- Reselect
+- Styled Components
+- Axios
 
-This project would not be possible without the support by these amazing folks. [**Become a sponsor**](https://opencollective.com/react-boilerplate) to get your company in front of thousands of engaged react developers and help us out!
+### Testing stack:
 
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/0/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/0/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/1/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/1/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/2/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/2/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/3/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/3/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/4/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/4/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/5/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/5/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/6/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/6/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/7/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/7/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/8/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/8/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/bronze-sponsor/9/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/bronze-sponsor/9/avatar.svg"></a>
+- jest - Testing Library
+- enzyme - Testing Library
 
----
+## Potential Improvements
 
-<a href="https://opencollective.com/react-boilerplate/backer/0/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/0/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/1/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/1/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/2/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/2/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/3/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/3/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/4/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/4/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/5/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/5/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/6/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/6/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/7/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/7/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/8/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/8/avatar.svg"></a>
-<a href="https://opencollective.com/react-boilerplate/backer/9/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/9/avatar.svg"></a>
+- Add pagination and view limit options
+- Integration and E2E tests
 
-## License
+## Author
 
-This project is licensed under the MIT license, Copyright (c) 2018 Maximilian
-Stoiber. For more information see `LICENSE.md`.
+WongCo - https://github.com/wongco
