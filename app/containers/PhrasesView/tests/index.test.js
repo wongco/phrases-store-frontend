@@ -1,11 +1,103 @@
-// import React from 'react';
-// import { mount } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
+import React from 'react';
+import toJson from 'enzyme-to-json';
+import { shallow } from 'enzyme';
 
-// import { PhrasesView } from '../index';
+import ErrorView from 'components/ErrorView';
+import LoadingIndicator from 'components/LoadingIndicator';
+import { PhrasesView } from '../index';
+import PhrasesWrapper from '../PhrasesWrapper';
+import Phrase from '../Phrase';
 
 describe('<PhrasesView />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(false);
+  const phrases = [
+    {
+      id: 1,
+      text: 'first phrase!',
+    },
+    {
+      id: 2,
+      text: 'second phrase!',
+    },
+  ];
+  const mockLoadPhrases = jest.fn();
+
+  it('renders without crashing', () => {
+    shallow(<PhrasesView phrases={phrases} loadPhrases={mockLoadPhrases} />);
+  });
+
+  it('matches snapshot for default criteria', () => {
+    const wrapper = shallow(
+      <PhrasesView phrases={phrases} loadPhrases={mockLoadPhrases} />,
+    );
+    const serialized = toJson(wrapper);
+    expect(serialized).toMatchSnapshot();
+  });
+
+  describe('rendering tests', () => {
+    it('renders imported components normally on load', () => {
+      const wrapper = shallow(
+        <PhrasesView phrases={phrases} loadPhrases={mockLoadPhrases} />,
+      );
+      const PhrasesWrapperComponent = wrapper.find(PhrasesWrapper);
+      expect(PhrasesWrapperComponent).toHaveLength(1);
+      const PhraseComponent = wrapper.find(Phrase);
+      expect(PhraseComponent).toHaveLength(2);
+    });
+
+    it('should not render ErrorView or LoadingIndicator initially', () => {
+      const wrapper = shallow(
+        <PhrasesView
+          phrases={phrases}
+          loadPhrases={mockLoadPhrases}
+          loading={false}
+          error={false}
+        />,
+      );
+      const loadingComponent = wrapper.find(LoadingIndicator);
+      expect(loadingComponent).toHaveLength(0);
+      const errorView = wrapper.find(ErrorView);
+      expect(errorView).toHaveLength(0);
+    });
+
+    it('when loading is true, renders LoadingIndicator, no phrases rendered', () => {
+      const wrapper = shallow(
+        <PhrasesView phrases={phrases} loadPhrases={mockLoadPhrases} loading />,
+      );
+      const loadingComponent = wrapper.find(LoadingIndicator);
+      expect(loadingComponent).toHaveLength(1);
+      const PhraseComponent = wrapper.find(Phrase);
+      expect(PhraseComponent).toHaveLength(0);
+    });
+
+    it('when error is true, renders ErrorView', () => {
+      const wrapper = shallow(
+        <PhrasesView phrases={phrases} loadPhrases={mockLoadPhrases} error />,
+      );
+      const errorView = wrapper.find(ErrorView);
+      expect(errorView).toHaveLength(1);
+    });
+  });
+
+  describe('lifecycle method tests', () => {
+    it('upon mounting, loadPhrases is called', () => {
+      const loadPhrasesLocal = jest.fn();
+      shallow(<PhrasesView phrases={phrases} loadPhrases={loadPhrasesLocal} />);
+
+      expect(loadPhrasesLocal).toHaveBeenCalled();
+    });
+
+    it('upon unmount, clearAppError is called', () => {
+      const mockClearAppError = jest.fn();
+      const wrapper = shallow(
+        <PhrasesView
+          phrases={phrases}
+          loadPhrases={mockLoadPhrases}
+          clearAppError={mockClearAppError}
+        />,
+      );
+      wrapper.unmount();
+
+      expect(mockClearAppError).toHaveBeenCalled();
+    });
   });
 });

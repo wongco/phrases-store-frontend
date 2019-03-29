@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PhrasesView /> matches snapshot for default criteria 1`] = `
+<PhraseViewWrapper>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+  >
+    <title>
+      Show All Phrases
+    </title>
+    <meta
+      content="Description of PhrasesView"
+      name="description"
+    />
+  </HelmetWrapper>
+  <H1>
+    <FormattedMessage
+      defaultMessage="Ordered by most recent:"
+      id="app.containers.PhrasesView.header"
+      values={Object {}}
+    />
+  </H1>
+  <PhrasesWrapper__PhraseWrapper>
+    <ul>
+      <Phrase
+        key="1"
+        text="first phrase!"
+      />
+      <Phrase
+        key="2"
+        text="second phrase!"
+      />
+    </ul>
+  </PhrasesWrapper__PhraseWrapper>
+</PhraseViewWrapper>
+`;
