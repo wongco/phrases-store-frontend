@@ -1,6 +1,8 @@
 import React from 'react';
 import toJson from 'enzyme-to-json';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
+import { enzymeFind } from 'styled-components/test-utils';
+import { IntlProvider } from 'react-intl';
 
 import Button from 'components/Button';
 import H1 from 'components/H1';
@@ -11,6 +13,13 @@ import Form from '../Form';
 import Input from '../Input';
 
 describe('<AddPhrase>', () => {
+  const mockInputEvent = {
+    target: {
+      name: 'phraseInput',
+      value: 'newTest',
+    },
+  };
+
   it('renders without crashing', () => {
     shallow(<AddPhrase />);
   });
@@ -68,13 +77,6 @@ describe('<AddPhrase>', () => {
   });
 
   describe('component method tests', () => {
-    const mockInputEvent = {
-      target: {
-        name: 'phraseInput',
-        value: 'newTest',
-      },
-    };
-
     it('handleChange should update state with new event input value', () => {
       const wrapper = shallow(<AddPhrase />);
       const initialState = { ...wrapper.state() };
@@ -102,6 +104,80 @@ describe('<AddPhrase>', () => {
       expect(mockAddPhrase).toHaveBeenCalled();
       const textArgument = mockAddPhrase.mock.calls[0][0];
       expect(textArgument).toBe('newTest');
+    });
+  });
+
+  describe('computed props validation', () => {
+    describe('when props.loading is true', () => {
+      it('Input should be passed the correct computed props', () => {
+        const wrapper = mount(
+          <IntlProvider locale="en">
+            <AddPhrase loading />
+          </IntlProvider>,
+        );
+        const inputComponent = enzymeFind(wrapper, Input);
+        const inputComponentProps = inputComponent.props();
+
+        expect(inputComponentProps).toHaveProperty('disabled', true);
+      });
+
+      it('Button should be passed the correct computed props', () => {
+        const wrapper = mount(
+          <IntlProvider locale="en">
+            <AddPhrase loading />
+          </IntlProvider>,
+        );
+        const buttonComponent = enzymeFind(wrapper, Button);
+        const buttonComponentProps = buttonComponent.props();
+
+        expect(buttonComponentProps).toHaveProperty('disabled', true);
+      });
+    });
+
+    describe('when props.loading is false or undefined', () => {
+      it('Input should be passed the correct computed props', () => {
+        const wrapper = mount(
+          <IntlProvider locale="en">
+            <AddPhrase />
+          </IntlProvider>,
+        );
+        const inputComponent = enzymeFind(wrapper, Input);
+        const inputComponentProps = inputComponent.props();
+
+        expect(inputComponentProps).toHaveProperty('disabled', undefined);
+      });
+
+      it('Button should be passed the correct computed props with empty PhraseInput', () => {
+        const wrapper = mount(
+          <IntlProvider locale="en">
+            <AddPhrase />
+          </IntlProvider>,
+        );
+        const buttonComponent = enzymeFind(wrapper, Button);
+        const buttonComponentProps = buttonComponent.props();
+
+        expect(buttonComponentProps).toHaveProperty('disabled', true);
+      });
+
+      it('Button should be passed the correct computed props with valid PhraseInput', () => {
+        const wrapper = mount(
+          <IntlProvider locale="en">
+            <AddPhrase />
+          </IntlProvider>,
+        );
+
+        // update AddPhrase Component with userInput and get updated Button Component
+        let AddPhraseComponent = wrapper.find(AddPhrase);
+        AddPhraseComponent.instance().handleChange(mockInputEvent);
+        wrapper.update();
+        // pick up updated AddPhrase Component
+        AddPhraseComponent = wrapper.find(AddPhrase);
+
+        const buttonComponent = enzymeFind(AddPhraseComponent, Button);
+        const buttonComponentProps = buttonComponent.props();
+
+        expect(buttonComponentProps).toHaveProperty('disabled', false);
+      });
     });
   });
 });
