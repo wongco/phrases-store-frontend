@@ -27,6 +27,7 @@ describe('makeSelectLoading', () => {
     const mockedState = fromJS({
       global: {
         loading: false,
+        other: 'garbage data',
       },
     });
     expect(loadingSelector(mockedState)).toEqual(loading);
@@ -40,6 +41,7 @@ describe('makeSelectError', () => {
     const mockedState = fromJS({
       global: {
         error: true,
+        other: 'garbage data',
       },
     });
     expect(errorSelector(mockedState)).toEqual(error);
@@ -59,6 +61,7 @@ describe('makeSelectPhrases', () => {
     const mockedState = fromJS({
       global: {
         phrases,
+        other: 'garbage data',
       },
     });
     expect(phrasesSelector(mockedState)).toEqual(phrases);
