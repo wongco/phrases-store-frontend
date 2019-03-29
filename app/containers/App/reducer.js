@@ -28,6 +28,12 @@ const initialState = fromJS({
   phrases: [],
 });
 
+/**
+ * @description redux reducer for App
+ * @param { immutable object } state - intitial redux immutable state
+ * @param { object } action - contains an object with type and other optional keys as payloads
+ * @param { string } action.type - required string indicating action type
+ */
 function appReducer(state = initialState, action) {
   switch (action.type) {
     case LOAD_PHRASES:

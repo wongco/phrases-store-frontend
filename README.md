@@ -1,6 +1,6 @@
 # Frontend for Phrases-store Application
 
-This is the frontend for the Phrases-store application. It provides the ability to add and display phrases. The Phrases-store Node/Express backend is required for this application to function normally. This app was bootstrapped with [React Boiler Plate](https://github.com/react-boilerplate/react-boilerplate).
+This is the frontend for the Phrases-store application. It provides the ability to add and display phrases. The Phrases-store Node/Express backend is required for this application to function normally. This app was bootstrapped with [react-boilerplate](https://github.com/react-boilerplate/react-boilerplate).
 
 ## Stories
 
@@ -62,7 +62,7 @@ In the root folder, run:
 
 ## Built / Leverages
 
-- Bootstrapped with [React Boiler Plate](https://github.com/react-boilerplate/react-boilerplate)
+- Bootstrapped with [react-boilerplate](https://github.com/react-boilerplate/react-boilerplate)
 - React
 - React Router
 - Redux

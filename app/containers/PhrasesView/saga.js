@@ -3,12 +3,18 @@ import { LOAD_PHRASES } from 'containers/App/constants';
 import { phrasesLoaded, phrasesLoadingError } from 'containers/App/actions';
 import { createGetRequestObj, apiCall } from 'containers/App/apiHelper';
 
-// watcher saga: listens for action dispatched to the store, starts worker saga
+/**
+ * @generator
+ * @description watcher saga generator: listens for action dispatched to the store, starts worker saga
+ */
 export default function* phrasesViewSaga() {
   yield takeLatest(LOAD_PHRASES, getPhrases);
 }
 
-// worker saga: gets invoked when watcher sees action and dispatches result
+/**
+ * @generator
+ * @description worker saga generator: gets invoked when watcher sees action and dispatches result
+ */
 export function* getPhrases() {
   const requestObj = createGetRequestObj();
   try {
