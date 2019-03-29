@@ -5,7 +5,16 @@ Object {
   "@@redux-saga/IO": true,
   "CALL": Object {
     "args": Array [
-      "testUserInput",
+      Object {
+        "data": Object {
+          "phrase": Object {
+            "text": "testUserInput",
+          },
+        },
+        "method": "post",
+        "timeout": 10000,
+        "url": "http://localhost:5000/phrases",
+      },
     ],
     "context": null,
     "fn": [Function],
@@ -18,7 +27,16 @@ Object {
   "@@redux-saga/IO": true,
   "CALL": Object {
     "args": Array [
-      "testUserInput",
+      Object {
+        "data": Object {
+          "phrase": Object {
+            "text": "testUserInput",
+          },
+        },
+        "method": "post",
+        "timeout": 10000,
+        "url": "http://localhost:5000/phrases",
+      },
     ],
     "context": null,
     "fn": [Function],

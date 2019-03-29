@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Navbar /> matches snapshot for default criteria 1`] = `
+<div>
+  <NavBar__Nav>
+    <NavBar__StyledNavLink
+      activeStyle={
+        Object {
+          "color": "rgb(7, 196, 98)",
+          "fontWeight": "450",
+        }
+      }
+      exact={true}
+      to="/"
+    >
+      Home
+    </NavBar__StyledNavLink>
+    <NavBar__StyledNavLink
+      activeStyle={
+        Object {
+          "color": "rgb(7, 196, 98)",
+          "fontWeight": "450",
+        }
+      }
+      exact={true}
+      to="/add"
+    >
+      Add
+    </NavBar__StyledNavLink>
+    <NavBar__StyledNavLink
+      activeStyle={
+        Object {
+          "color": "rgb(7, 196, 98)",
+          "fontWeight": "450",
+        }
+      }
+      exact={true}
+      to="/phrases"
+    >
+      Show All
+    </NavBar__StyledNavLink>
+    <NavBar__Hero>
+      The Phrases Store
+    </NavBar__Hero>
+  </NavBar__Nav>
+</div>
+`;
