@@ -1,12 +1,15 @@
 import React from 'react';
 import toJson from 'enzyme-to-json';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
+import { enzymeFind } from 'styled-components/test-utils';
+import { IntlProvider } from 'react-intl';
 
 import ErrorView from 'components/ErrorView';
 import LoadingIndicator from 'components/LoadingIndicator';
 import { PhrasesView } from '../index';
 import PhrasesWrapper from '../PhrasesWrapper';
 import Phrase from '../Phrase';
+import NoticeWrapper from '../NoticeWrapper';
 
 describe('<PhrasesView />', () => {
   const phrases = [
@@ -75,6 +78,20 @@ describe('<PhrasesView />', () => {
       );
       const errorView = wrapper.find(ErrorView);
       expect(errorView).toHaveLength(1);
+    });
+
+    it('render notice if there are no phrases on api', () => {
+      const mockPhrasesEmpty = [];
+      const wrapper = mount(
+        <IntlProvider locale="en">
+          <PhrasesView
+            phrases={mockPhrasesEmpty}
+            loadPhrases={mockLoadPhrases}
+          />
+        </IntlProvider>,
+      );
+      const NoticeWrapperComponent = enzymeFind(wrapper, NoticeWrapper);
+      expect(NoticeWrapperComponent).toHaveLength(1);
     });
   });
 

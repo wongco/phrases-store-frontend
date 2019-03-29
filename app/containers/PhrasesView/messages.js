@@ -17,4 +17,8 @@ export default defineMessages({
     id: `${scope}.error`,
     defaultMessage: 'Error obtaining latest phrases!',
   },
+  notice: {
+    id: `${scope}.notice`,
+    defaultMessage: 'No phrases added yet! Please add one!',
+  },
 });

@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NoticeWrapper /> matches snapshot for default criteria 1`] = `
+<StyledComponent
+  forwardedClass={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": undefined,
+      "componentStyle": ComponentStyle {
+        "componentId": "NoticeWrapper-sc-1dc1n48-0",
+        "isStatic": true,
+        "rules": Array [
+          "display:flex;justify-content:center;align-items:center;width:100%;",
+        ],
+      },
+      "displayName": "NoticeWrapper",
+      "render": [Function],
+      "styledComponentId": "NoticeWrapper-sc-1dc1n48-0",
+      "target": "div",
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+/>
+`;

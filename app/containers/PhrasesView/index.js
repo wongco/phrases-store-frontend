@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 /**
  *
  * PhrasesView
@@ -25,6 +26,7 @@ import {
 import PhraseViewWrapper from './PhraseViewWrapper';
 import PhrasesWrapper from './PhrasesWrapper';
 import Phrase from './Phrase';
+import NoticeWrapper from './NoticeWrapper';
 import saga from './saga';
 import messages from './messages';
 
@@ -68,6 +70,12 @@ export class PhrasesView extends React.PureComponent {
               ))}
             </ul>
           )}
+          {phrases.length === 0 &&
+            !error && (
+              <NoticeWrapper>
+                <FormattedMessage {...messages.notice} />
+              </NoticeWrapper>
+            )}
         </PhrasesWrapper>
       </PhraseViewWrapper>
     );
